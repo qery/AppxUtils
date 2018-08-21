@@ -5,9 +5,9 @@ Utilities for basic tasks with Appx packages for .net
 
 ### Prerequisites
 
-1. .net 4.0
-2. PowerShell installed
-3. System.Management.Automation.dll installed (part of PowerShell ?)
+* .net 4.0
+* PowerShell installed
+* System.Management.Automation.dll installed (part of PowerShell ?)
 ```
 c:\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll
 ```
@@ -15,6 +15,10 @@ c:\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\Sys
 ## Built With
 
 * MSBuild
+
+## How to build
+
+Use ```build.bat``` to make release version of library and testing application.
 
 ## Authors
 
