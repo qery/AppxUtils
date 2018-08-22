@@ -30,6 +30,7 @@ Partial Class Form1
 		Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.cmdRefresh = New System.Windows.Forms.Button()
 		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+		Me.Label6 = New System.Windows.Forms.Label()
 		Me.cmdStart = New System.Windows.Forms.Button()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
@@ -41,7 +42,9 @@ Partial Class Form1
 		Me.txtName = New System.Windows.Forms.TextBox()
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.lblIsCapable = New System.Windows.Forms.Label()
-		Me.Label6 = New System.Windows.Forms.Label()
+		Me.lstIds = New System.Windows.Forms.ListView()
+		Me.Label7 = New System.Windows.Forms.Label()
+		Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.GroupBox1.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
 		Me.SuspendLayout()
@@ -119,6 +122,8 @@ Partial Class Form1
 		'
 		Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 							Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.GroupBox2.Controls.Add(Me.Label7)
+		Me.GroupBox2.Controls.Add(Me.lstIds)
 		Me.GroupBox2.Controls.Add(Me.Label6)
 		Me.GroupBox2.Controls.Add(Me.cmdStart)
 		Me.GroupBox2.Controls.Add(Me.Label4)
@@ -136,11 +141,20 @@ Partial Class Form1
 		Me.GroupBox2.TabStop = False
 		Me.GroupBox2.Text = "Details"
 		'
+		'Label6
+		'
+		Me.Label6.AutoSize = True
+		Me.Label6.Location = New System.Drawing.Point(6, 200)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(175, 13)
+		Me.Label6.TabIndex = 3
+		Me.Label6.Text = "Note: not all packages are startable"
+		'
 		'cmdStart
 		'
 		Me.cmdStart.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.cmdStart.Enabled = False
-		Me.cmdStart.Location = New System.Drawing.Point(199, 125)
+		Me.cmdStart.Location = New System.Drawing.Point(199, 188)
 		Me.cmdStart.Name = "cmdStart"
 		Me.cmdStart.Size = New System.Drawing.Size(75, 23)
 		Me.cmdStart.TabIndex = 2
@@ -241,14 +255,33 @@ Partial Class Form1
 		Me.lblIsCapable.TabIndex = 4
 		Me.lblIsCapable.Text = "<result>"
 		'
-		'Label6
+		'lstIds
 		'
-		Me.Label6.AutoSize = True
-		Me.Label6.Location = New System.Drawing.Point(6, 200)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(175, 13)
-		Me.Label6.TabIndex = 3
-		Me.Label6.Text = "Note: not all packages are startable"
+		Me.lstIds.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3})
+		Me.lstIds.FullRowSelect = True
+		Me.lstIds.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
+		Me.lstIds.LabelWrap = False
+		Me.lstIds.Location = New System.Drawing.Point(121, 125)
+		Me.lstIds.MultiSelect = False
+		Me.lstIds.Name = "lstIds"
+		Me.lstIds.Size = New System.Drawing.Size(153, 57)
+		Me.lstIds.TabIndex = 4
+		Me.lstIds.UseCompatibleStateImageBehavior = False
+		Me.lstIds.View = System.Windows.Forms.View.Details
+		'
+		'Label7
+		'
+		Me.Label7.AutoSize = True
+		Me.Label7.Location = New System.Drawing.Point(6, 128)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(81, 13)
+		Me.Label7.TabIndex = 5
+		Me.Label7.Text = "Application IDs:"
+		'
+		'ColumnHeader3
+		'
+		Me.ColumnHeader3.Text = "ID"
+		Me.ColumnHeader3.Width = 119
 		'
 		'Form1
 		'
@@ -289,5 +322,8 @@ Partial Class Form1
 	Friend WithEvents Label5 As System.Windows.Forms.Label
 	Friend WithEvents lblIsCapable As System.Windows.Forms.Label
 	Friend WithEvents Label6 As System.Windows.Forms.Label
+	Friend WithEvents Label7 As System.Windows.Forms.Label
+	Friend WithEvents lstIds As System.Windows.Forms.ListView
+	Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
 
 End Class

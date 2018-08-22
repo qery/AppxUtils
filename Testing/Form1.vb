@@ -45,6 +45,10 @@ Public Class Form1
 				txtPFN.Text = .PackageFamilyName
 				txtPublisher.Text = .Publisher
 				txtVersion.Text = .Version
+				lstIds.Items.Clear()
+				For Each id As String In .ApplicationId
+					lstIds.Items.Add(id)
+				Next
 				cmdStart.Enabled = True
 				cmdStart.Tag = e.Item.Tag
 			End With
@@ -53,6 +57,7 @@ Public Class Form1
 			txtPFN.Clear()
 			txtPublisher.Clear()
 			txtVersion.Clear()
+			lstIds.Items.Clear()
 			cmdStart.Enabled = False
 			cmdStart.Tag = Nothing
 		End If
@@ -60,7 +65,11 @@ Public Class Form1
 
 	Private Sub cmdStart_Click(sender As System.Object, e As System.EventArgs) Handles cmdStart.Click
 		If cmdStart.Tag IsNot Nothing AndAlso TypeOf cmdStart.Tag Is AppxUtils.AppxInfo Then
-			AppxUtils.StartAppx(DirectCast(cmdStart.Tag, AppxUtils.AppxInfo))
+			If lstIds.SelectedItems.Count > 0 Then
+				DirectCast(cmdStart.Tag, AppxUtils.AppxInfo).Start(lstIds.SelectedItems(0).Text)
+			ElseIf lstIds.Items.Count > 0 Then
+				DirectCast(cmdStart.Tag, AppxUtils.AppxInfo).Start(lstIds.Items(0).Text)
+			End If
 		End If
 	End Sub
 End Class
