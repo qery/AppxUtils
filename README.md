@@ -20,6 +20,13 @@ c:\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\Sys
 
 Use ```build.bat``` to make release version of library and testing application.
 
+## Tested on
+
+* Windows XP - Appx not supported - **OK**
+* Windows 7 - Appx not supported - **OK**
+* Windows 8 - Appx supported - **OK** (listing and starting works)
+* Windows 10 - Appx supported - **OK** (listing and starting works)
+
 ## Authors
 
 * **Qery** - *Initial work* - [Qery](https://github.com/qery)
